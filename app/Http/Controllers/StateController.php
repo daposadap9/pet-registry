@@ -9,44 +9,42 @@ class StateController extends Controller
 {
     public function index()
     {
-        return response()->json(State::all(), 200);
+        return State::all();
     }
 
     public function store(Request $request)
     {
-        $validated = $request->validate([
+        $request->validate([
             'name' => 'required|string|max:255',
         ]);
 
-        $state = State::create($validated);
+        $state = State::create($request->all());
 
         return response()->json($state, 201);
     }
 
     public function show($id)
     {
-        $state = State::findOrFail($id);
-
-        return response()->json($state, 200);
+        return State::findOrFail($id);
     }
 
     public function update(Request $request, $id)
     {
-        $validated = $request->validate([
-            'name' => 'sometimes|required|string|max:255',
+        $request->validate([
+            'name' => 'required|string|max:255',
         ]);
 
         $state = State::findOrFail($id);
-        $state->update($validated);
+        $state->update($request->all());
 
         return response()->json($state, 200);
     }
 
     public function destroy($id)
     {
-        $state = State::findOrFail($id);
-        $state->delete();
+        State::destroy($id);
 
         return response()->json(null, 204);
     }
 }
+

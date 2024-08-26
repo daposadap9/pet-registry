@@ -515,10 +515,13 @@ class ComposerStaticInit7e8c3c14ff33b199b4a0838993eb8423
     public static $classMap = array (
         'App\\Http\\Controllers\\CategoryController' => __DIR__ . '/../..' . '/app/Http/Controllers/CategoryController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/LoginController.php',
         'App\\Http\\Controllers\\PetController' => __DIR__ . '/../..' . '/app/Http/Controllers/PetController.php',
+        'App\\Http\\Controllers\\StateController' => __DIR__ . '/../..' . '/app/Http/Controllers/StateController.php',
         'App\\Http\\Middleware\\ExcludeCsrf' => __DIR__ . '/../..' . '/app/Http/Middleware/ExcludeCsrf.php',
         'App\\Models\\Category' => __DIR__ . '/../..' . '/app/Models/Category.php',
         'App\\Models\\Pet' => __DIR__ . '/../..' . '/app/Models/Pet.php',
+        'App\\Models\\State' => __DIR__ . '/../..' . '/app/Models/State.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',

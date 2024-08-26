@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Pet;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PetController extends Controller
 {
@@ -21,6 +22,9 @@ class PetController extends Controller
         if ($request->has('state_id') && !empty($request->state_id)) {
             $query->where('state_id', $request->state_id);
         }
+
+        // Filtrar por el usuario autenticado
+        $query->where('user_id', Auth::id());
 
         $pets = $query->with('state', 'category')->get();
 
@@ -42,6 +46,9 @@ class PetController extends Controller
             'image_url' => 'nullable|url'
         ]);
 
+        // Asignar el usuario autenticado
+        $validated['user_id'] = Auth::id();
+
         $pet = Pet::create($validated);
 
         return response()->json($pet, 201);
@@ -55,7 +62,7 @@ class PetController extends Controller
      */
     public function show($id)
     {
-        $pet = Pet::with('state', 'category')->findOrFail($id);
+        $pet = Pet::where('id', $id)->where('user_id', Auth::id())->with('state', 'category')->firstOrFail();
 
         return response()->json($pet, 200);
     }
@@ -76,7 +83,7 @@ class PetController extends Controller
             'image_url' => 'nullable|url'
         ]);
 
-        $pet = Pet::findOrFail($id);
+        $pet = Pet::where('id', $id)->where('user_id', Auth::id())->firstOrFail();
         $pet->update($validated);
 
         return response()->json($pet, 200);
@@ -90,7 +97,7 @@ class PetController extends Controller
      */
     public function destroy($id)
     {
-        $pet = Pet::findOrFail($id);
+        $pet = Pet::where('id', $id)->where('user_id', Auth::id())->firstOrFail();
         $pet->delete();
 
         return response()->json(null, 204);

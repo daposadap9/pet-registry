@@ -7,27 +7,33 @@ use Illuminate\Http\Request;
 
 class StateController extends Controller
 {
+    // Mostrar todos los estados
     public function index()
     {
-        return State::all();
+        $states = State::all();
+        return response()->json($states, 200);
     }
 
+    // Crear un nuevo estado
     public function store(Request $request)
     {
         $request->validate([
             'name' => 'required|string|max:255',
         ]);
 
-        $state = State::create($request->all());
+        $state = State::create($request->only('name')); // Solo permite el campo 'name'
 
         return response()->json($state, 201);
-    }
+    }    
 
+    // Mostrar un estado específico
     public function show($id)
     {
-        return State::findOrFail($id);
+        $state = State::findOrFail($id);
+        return response()->json($state, 200);
     }
 
+    // Actualizar un estado existente
     public function update(Request $request, $id)
     {
         $request->validate([
@@ -35,16 +41,17 @@ class StateController extends Controller
         ]);
 
         $state = State::findOrFail($id);
-        $state->update($request->all());
+        $state->update($request->only('name')); // Solo actualiza el campo 'name'
 
         return response()->json($state, 200);
     }
 
+    // Eliminar un estado
     public function destroy($id)
     {
-        State::destroy($id);
+        $state = State::findOrFail($id);
+        $state->delete();
 
         return response()->json(null, 204);
     }
 }
-

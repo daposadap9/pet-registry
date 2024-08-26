@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pet extends Model
 {
-    protected $fillable = ['name', 'category_id', 'state_id', 'image_url'];
+    protected $fillable = ['name', 'category_id', 'state_id', 'user_id', 'image_url'];
 
     public function state()
     {
@@ -17,5 +17,9 @@ class Pet extends Model
     {
         return $this->belongsTo(Category::class);
     }
-}
 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+}

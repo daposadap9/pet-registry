@@ -8,10 +8,13 @@ $baseDir = dirname($vendorDir);
 return array(
     'App\\Http\\Controllers\\CategoryController' => $baseDir . '/app/Http/Controllers/CategoryController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
+    'App\\Http\\Controllers\\LoginController' => $baseDir . '/app/Http/Controllers/LoginController.php',
     'App\\Http\\Controllers\\PetController' => $baseDir . '/app/Http/Controllers/PetController.php',
+    'App\\Http\\Controllers\\StateController' => $baseDir . '/app/Http/Controllers/StateController.php',
     'App\\Http\\Middleware\\ExcludeCsrf' => $baseDir . '/app/Http/Middleware/ExcludeCsrf.php',
     'App\\Models\\Category' => $baseDir . '/app/Models/Category.php',
     'App\\Models\\Pet' => $baseDir . '/app/Models/Pet.php',
+    'App\\Models\\State' => $baseDir . '/app/Models/State.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\RouteServiceProvider' => $baseDir . '/app/Providers/RouteServiceProvider.php',

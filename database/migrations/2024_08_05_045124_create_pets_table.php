@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('name');
             $table->foreignId('category_id')->constrained();
             $table->foreignId('state_id')->constrained();
-            $table->foreignId('user_id')->constrained()->onDelete('cascade'); // Nueva columna para el usuario
             $table->string('image_url')->nullable();
             $table->timestamps();
         });

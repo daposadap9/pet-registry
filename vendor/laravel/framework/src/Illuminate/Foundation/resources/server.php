@@ -1,5 +1,14 @@
 <?php
 
+use Illuminate\Support\Facades\Artisan;
+
+$port = env('PORT', 8080);
+$host = '0.0.0.0';
+Artisan::call('serve', [
+    '--host' => $host,
+    '--port' => $port,
+]);
+
 $publicPath = getcwd();
 
 $uri = urldecode(

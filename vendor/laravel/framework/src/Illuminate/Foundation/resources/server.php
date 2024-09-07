@@ -1,9 +1,11 @@
 <?php
 
+require __DIR__.'/../vendor/autoload.php';
+
 use Illuminate\Support\Facades\Artisan;
 
-$port = env('PORT', 8080);
-$host = env('HOST', '0.0.0.0');
+$port = getenv('PORT') ?: 8000;
+$host = getenv('HOST') ?: '0.0.0.0';
 Artisan::call('serve', [
     '--host' => $host,
     '--port' => $port,
@@ -27,3 +29,4 @@ $remoteAddress = $_SERVER['REMOTE_ADDR'].':'.$_SERVER['REMOTE_PORT'];
 file_put_contents('php://stdout', "[$formattedDateTime] $remoteAddress [$requestMethod] URI: $uri\n");
 
 require_once $publicPath.'/index.php';
+

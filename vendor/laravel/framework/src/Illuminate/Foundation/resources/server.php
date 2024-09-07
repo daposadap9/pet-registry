@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Artisan;
 
-$port = env('PORT', 8000);
+$port = env('PORT', 8080);
 $host = env('HOST', '0.0.0.0');
 Artisan::call('serve', [
     '--host' => $host,

@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__.'/../vendor/autoload.php';
+require __DIR__.'C:\xampp\htdocs\pet-registry\vendor\autoload.php';
 
 use Illuminate\Support\Facades\Artisan;
 

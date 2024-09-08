@@ -13,18 +13,18 @@ Route::get('test', function () {
 Route::post('login', [LoginController::class, 'login']);          // Ruta para iniciar sesión
 Route::post('register', [LoginController::class, 'register']);    // Ruta para registrar usuarios
 Route::post('/check-email', [LoginController::class, 'checkEmail']);
-
-
+// Rutas para la gestión de categorías (Categories)
+Route::apiResource('categories', CategoryController::class);
+// Rutas para la gestión de estados (States)
+    Route::apiResource('states', StateController::class);
 // Proteger las rutas que requieren autenticación
+
+
 Route::middleware('auth:sanctum')->group(function () {
     // Rutas para la gestión de mascotas (Pets)
     Route::apiResource('pets', PetController::class);
 
-    // Rutas para la gestión de categorías (Categories)
-    Route::apiResource('categories', CategoryController::class);
 
-    // Rutas para la gestión de estados (States)
-    Route::apiResource('states', StateController::class);
 
     // Rutas adicionales si decides utilizarlas
     Route::get('users', [LoginController::class, 'index']);           // Ruta para listar todos los usuarios

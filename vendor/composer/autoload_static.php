@@ -48,6 +48,7 @@ class ComposerStaticInit7e8c3c14ff33b199b4a0838993eb8423
         array (
             'Whoops\\' => 7,
             'Webmozart\\Assert\\' => 17,
+            'WebSocket\\' => 10,
         ),
         'T' => 
         array (
@@ -187,6 +188,10 @@ class ComposerStaticInit7e8c3c14ff33b199b4a0838993eb8423
         'Webmozart\\Assert\\' => 
         array (
             0 => __DIR__ . '/..' . '/webmozart/assert/src',
+        ),
+        'WebSocket\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/textalk/websocket/lib',
         ),
         'TijsVerkoyen\\CssToInlineStyles\\' => 
         array (
@@ -515,11 +520,15 @@ class ComposerStaticInit7e8c3c14ff33b199b4a0838993eb8423
     public static $classMap = array (
         'App\\Http\\Controllers\\CategoryController' => __DIR__ . '/../..' . '/app/Http/Controllers/CategoryController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\ConversationController' => __DIR__ . '/../..' . '/app/Http/Controllers/ConversationController.php',
         'App\\Http\\Controllers\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/LoginController.php',
+        'App\\Http\\Controllers\\MessageController' => __DIR__ . '/../..' . '/app/Http/Controllers/MessageController.php',
         'App\\Http\\Controllers\\PetController' => __DIR__ . '/../..' . '/app/Http/Controllers/PetController.php',
         'App\\Http\\Controllers\\StateController' => __DIR__ . '/../..' . '/app/Http/Controllers/StateController.php',
         'App\\Http\\Middleware\\ExcludeCsrf' => __DIR__ . '/../..' . '/app/Http/Middleware/ExcludeCsrf.php',
         'App\\Models\\Category' => __DIR__ . '/../..' . '/app/Models/Category.php',
+        'App\\Models\\Conversation' => __DIR__ . '/../..' . '/app/Models/Conversation.php',
+        'App\\Models\\Message' => __DIR__ . '/../..' . '/app/Models/Message.php',
         'App\\Models\\Pet' => __DIR__ . '/../..' . '/app/Models/Pet.php',
         'App\\Models\\State' => __DIR__ . '/../..' . '/app/Models/State.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
@@ -6422,6 +6431,21 @@ class ComposerStaticInit7e8c3c14ff33b199b4a0838993eb8423
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Rule\\Rule' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Rule/Rule.php',
         'UnhandledMatchError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php',
         'ValueError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/ValueError.php',
+        'WebSocket\\BadOpcodeException' => __DIR__ . '/..' . '/textalk/websocket/lib/BadOpcodeException.php',
+        'WebSocket\\BadUriException' => __DIR__ . '/..' . '/textalk/websocket/lib/BadUriException.php',
+        'WebSocket\\Base' => __DIR__ . '/..' . '/textalk/websocket/lib/Base.php',
+        'WebSocket\\Client' => __DIR__ . '/..' . '/textalk/websocket/lib/Client.php',
+        'WebSocket\\ConnectionException' => __DIR__ . '/..' . '/textalk/websocket/lib/ConnectionException.php',
+        'WebSocket\\Exception' => __DIR__ . '/..' . '/textalk/websocket/lib/Exception.php',
+        'WebSocket\\Message\\Binary' => __DIR__ . '/..' . '/textalk/websocket/lib/Message/Binary.php',
+        'WebSocket\\Message\\Close' => __DIR__ . '/..' . '/textalk/websocket/lib/Message/Close.php',
+        'WebSocket\\Message\\Factory' => __DIR__ . '/..' . '/textalk/websocket/lib/Message/Factory.php',
+        'WebSocket\\Message\\Message' => __DIR__ . '/..' . '/textalk/websocket/lib/Message/Message.php',
+        'WebSocket\\Message\\Ping' => __DIR__ . '/..' . '/textalk/websocket/lib/Message/Ping.php',
+        'WebSocket\\Message\\Pong' => __DIR__ . '/..' . '/textalk/websocket/lib/Message/Pong.php',
+        'WebSocket\\Message\\Text' => __DIR__ . '/..' . '/textalk/websocket/lib/Message/Text.php',
+        'WebSocket\\Server' => __DIR__ . '/..' . '/textalk/websocket/lib/Server.php',
+        'WebSocket\\TimeoutException' => __DIR__ . '/..' . '/textalk/websocket/lib/TimeoutException.php',
         'Webmozart\\Assert\\Assert' => __DIR__ . '/..' . '/webmozart/assert/src/Assert.php',
         'Webmozart\\Assert\\InvalidArgumentException' => __DIR__ . '/..' . '/webmozart/assert/src/InvalidArgumentException.php',
         'Webmozart\\Assert\\Mixin' => __DIR__ . '/..' . '/webmozart/assert/src/Mixin.php',

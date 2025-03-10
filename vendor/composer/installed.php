@@ -3,7 +3,7 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '40e1b22a41dc9aaa35edd67e0e9444f7bb971e6d',
+        'reference' => '0aa8ae6ddbc5083771abcf5778577e3b4947e78d',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -382,7 +382,7 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '40e1b22a41dc9aaa35edd67e0e9444f7bb971e6d',
+            'reference' => '0aa8ae6ddbc5083771abcf5778577e3b4947e78d',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -1240,6 +1240,15 @@
             'install_path' => __DIR__ . '/../symfony/yaml',
             'aliases' => array(),
             'dev_requirement' => true,
+        ),
+        'textalk/websocket' => array(
+            'pretty_version' => '1.5.8',
+            'version' => '1.5.8.0',
+            'reference' => 'd05dbaa97500176447ffb1f1800573f23085ab13',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../textalk/websocket',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
         'theseer/tokenizer' => array(
             'pretty_version' => '1.2.3',

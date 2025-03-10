@@ -19,6 +19,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'profile_photo', // Añadir este campo
     ];
 
     /**
@@ -39,4 +40,23 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Los atributos que deben ser añadidos automáticamente al serializar el modelo.
+     *
+     * @var array
+     */
+    protected $appends = [
+        'profile_photo_url',
+    ];
+
+    /**
+     * Obtener la URL completa de la foto de perfil.
+     *
+     * @return string|null
+     */
+    public function getProfilePhotoUrlAttribute()
+    {
+        return $this->profile_photo ? asset('storage/' . $this->profile_photo) : null;
+    }
 }
